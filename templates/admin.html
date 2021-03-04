@@ -1,0 +1,67 @@
+{% extends 'base.html'%} {% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <h1>{{org.name}}</h1>
+        <hr>
+        <div class="box box-success">
+            <div class="box-header with-border">
+                <h3 class="box-title">All Members</h3>
+                <a href="{% url 'add' %}" class="btn btn-success btn-sm pull-right">Add new member</a>
+            </div>
+            <div class="box-body">
+                <div style="overflow-x:auto;">
+                    <table class="table table-striped" id="myProduct">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            {% for member in members %}
+                            <tr>
+                                <td>
+                                    {{member.memberID}}
+                                </td>
+                                <td>
+                                    {{member.firstname}} {{member.lastname}}
+                                </td>
+                                <td>
+                                    {{member.email}}
+                                </td>
+                                <td>
+                                    {{member.phone_number}}
+                                </td>
+                                <td>
+
+                                    <a href="#remove" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                    <a href="edit?id={{member.id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
+
+                                    <a href="view?id={{member.id}}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<script>
+    $(document).ready(function() {
+        $('#myProduct ').DataTable();
+    });
+</script>
+
+{% endblock %}

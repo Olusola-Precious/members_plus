@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>LUFIL LAI INTERNATIONAL</h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="box box-success">
+            <div class="box-body">
+                <div class="col-md-6">
+                    <ul class="list-group">
+
+                        <center>
+                            <p class="list-group-item list-group-item-success">{{member.firstname}}'s Information</p>
+                        </center>
+                        <li class="list-group-item"> <b>member ID</b> :
+                            <span class="label badge pull-right"> {{member.memberID}} </span>
+                        </li>
+                        <li class="list-group-item"><b>Role</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.role}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Full Name</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.firstname}} {{member.lastname}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Residential Address</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.residentialAddress}}.</span>
+                        </li>
+                        <li class="list-group-item"><b>Phone Number</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.phone_number}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Position Held</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.positionHeld}}</span>
+                        </li>
+
+                        <li class="list-group-item"><b>Email</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.email}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Age</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">53 years</span>
+                        </li>
+                        <li class="list-group-item"><b>Gender</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.get_gender_display}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Blood Group</b> :
+                            <span class="label label-danger pull-right" style="font-size: 12px; color: #333">{{member.bloodGroup}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Marital Status</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.maritalStatus}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Next of Kin</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.nextOfKin}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Nationality</b> :
+                            <span class="label label-success pull-right" style="font-size: 12px; color: #333">{{member.country}}</span>
+                        </li>
+                        <li class="list-group-item"><b>State of Origin</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.stateOfOrigin}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Town</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.town}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Local Government Area(LGA)</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.LGA}} Local Government</span>
+                        </li>
+                        <li class="list-group-item"><b>Occupation</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.occupation}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Highest Education Qualification</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.highestQual}}</span>
+                        </li>
+                        <li class="list-group-item"><b>Proffession</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.proffession}}</span>
+                        </li>
+
+                        <li class="list-group-item"><b>Other Information</b> :
+                            <span class="label pull-right" style="font-size: 12px; color: #333">{{member.otherInfo}}</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Profile Picture -->
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <center>
+                            <p class="list-group-item list-group-item-success">Profile Picture</p>
+                        </center>
+                        <center>
+                            <img src="media/{{member.profileImg}}" alt="{{member.firstname}} {{member.lastname}}" class="img-responsive">
+                        </center>
+                    </ul>
+                </div>
+                <!-- /Profile Picture -->
+
+            </div>
+            <div class="box-footer">
+                <a href="{% url 'home' %}" class="btn btn-success">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i></i>
+                    Back</a>
+            </div>
+
+        </div>
+
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %}

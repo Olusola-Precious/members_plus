@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{org.name}} | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="img/logo1.jpg">
+
+    <!-- jQuery 3 -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'js/adminlte.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'css/AdminLTE.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/skins/skin-blue.css' %}">
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{% static 'css/dataTables.bootstrap.min.css' %}">
+
+
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <!-- The user image in the menu -->
+                    <li class="user-header">
+                        <center>
+                            <div style="height: 50px; width: 50px;">
+                                <img src="media/{{org.logo}}" class="img-circle img-responsive" alt="User Image">
+                            </div>
+
+                            <div style="color: white;">
+                                <p class="text-lowercase">
+                                    Admin - Administrator
+                                </p>
+                                <p><small class="text-capitalize">{{org.email}}</small></p>
+
+                                <a href="logout" class="btn  btn-success">Sign out</a>
+                            </div>
+
+
+                            {% comment %}
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-default btn-primary">Profile</a>
+                                </div>
+
+                            </div>
+                            {% endcomment %}
+                        </center>
+                        <br/>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="header">Features</li>
+                    <li><a href="{% url 'home' %}"><i class="fa fa-dashboard"></i> <span>Overview</span></a></li>
+                    <li><a href="#"><i class="fa fa-list-alt"></i> <span>View Members</span></a></li>
+                    <li><a href="#"><i class="fa fa-balance-scale"></i> <span>Edit info</span></a></li>
+                    <li><a href="#"><i class="fa fa-users"></i> <span>Manage Users</span></a></li>
+
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+
+
+        {% block content%}{% endblock %}
+
+
+
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                Privacy | Terms and Condition
+            </div>
+
+            <!-- Default to the left -->
+            <span> Member + <strong><i class="fa fa-copyright" aria-hidden="true"></i> 2021</a>.</strong></span>
+
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- jQuery 3 -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- AdminLTE App -->
+    <script src="{% static 'js/adminlte.min.js' %}"></script>
+
+    <!-- DataTables -->
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.bootstrap.min.js' %}"></script>
+    {% block script %} {% endblock %}
+
+</body>
+
+</html>

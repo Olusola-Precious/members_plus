@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Log in | Member Plus </title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="img/logo1.jpg">
+
+    <!-- jQuery 3 -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'js/adminlte.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'css/AdminLTE.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/skins/skin-blue.css' %}">
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+<body class="hold-transition login-page">
+    <div class="login-box" style="margin-top: 150px;">
+        <div class="login-logo">
+            <!--<img src="{% static 'img/logo.jpg' %}" alt="" width="80" height="80">-->
+            <h2>Member Plus</h2>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body" style="border-top: 3px groove green;">
+            <div class="login-box-msg">
+                <p>Login</p>
+                {% if message %}
+                <p class="text-danger">{{message}}</p>
+                {% endif %}
+            </div>
+
+
+
+            <form action=" " method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="OrganizationID" name="username" required>
+                    <i class="fa fa-user-circle form-control-feedback" aria-hidden="true"></i>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                    <i class="fa fa-lock form-control-feedback" aria-hidden="true"></i>
+                </div>
+
+                <button type="submit" class="text-muted text-center btn-block btn btn-primary btn-rect" name="btn_login">Log In</button>
+
+
+
+            </form>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- jQuery 3 -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- AdminLTE App -->
+    <script src="{% static 'js/adminlte.min.js' %}"></script>
+
+</body>
+
+</html>

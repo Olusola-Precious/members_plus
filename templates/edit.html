@@ -1,0 +1,222 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <h3 class="box-title">Edit Member's Information</h3>
+            </div>
+
+            <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <div class="box-body">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Member ID</label>
+                            <input type="text" class="form-control" name="product_code" value="{{member.memberID}}" required readonly>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">First Name</label>
+                                    <input type="text" class="form-control" name="firstName" value="{{member.firstname}}" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Last Name</label>
+                                    <input type="text" class="form-control" name="lastName" value="{{member.lastname}}" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Phone Number</label>
+                                    <input type="text" class="form-control" name="phoneNo" value="{{member.phone_number}}" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" class="form-control" name="email" value="{{member.email}}" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Date Of Birth</label>
+                                    <input type="date" class="form-control" name="DOB" value="{{member.DOB}}" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Gender</label>
+                                    <select class="form-control" name="gender" value="{{member.gender}}" required>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">
+                                        Blood Group
+                                    </label>
+                                    <input type="text" class="form-control" name="bloodGroup" value="{{member.bloodGroup}}">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Marital Status</label>
+                                    <select class="form-control" name="maritalStat" value="{{member.maritalStatus}}">
+                                        <option>Married</option>
+                                        <option>Single</option>
+                                        <option>Divorced</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Country</label>
+                            <select class="form-control" name="country" value="{{member.country}}">
+                                        <option>Nigerian</option>
+                                        <option>----</option>
+                                        <option>----</option>
+                                    </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Residential Address</label>
+                            <textarea name="homeAddress" cols="30" rows="10" class="form-control" value="">{{member.residentialAddress}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">State Of Origin</label>
+                                    <select class="form-control" name="sateOForigin" value="{{member.stateOfOrigin}}">
+                                        <option>Epe</option>
+                                        <option>Lagos</option>
+                                        <option>-----</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">LGA</label>
+                                    <select class="form-control" name="LGA" value="{{member.LGA}}">
+                                        <option>Epe</option>
+                                        <option>-----</option>
+                                        <option>-----</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Next Of Kin</label>
+                            <input type="text" class="form-control" name="nextOfKin" value="{{member.nextOfKin}}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Highest Qualification</label>
+                            <input type="text" class="form-control" name="highQual" value="{{member.highestQual}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Occupation</label>
+                            <input type="text" class="form-control" name="occupation" value="{{member.occupation}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Proffession</label>
+                            <input type="text" class="form-control" name="proffession" value="{{member.proffession}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Position Held</label>
+                            <input type="text" class="form-control" name="positionHeld" value="{{member.positionHeld}}">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="">Office Address</label>
+                            <textarea name="offAddress" cols="30" rows="10" class="form-control" value="">{{member.officeAddress}}</textarea>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Profile Picture</label>
+                            <input type="file" accept="image/*" class="mb-5 form-control input-group" id="profimage" name="product_img">
+                            <img src="media/{{member.profileImg}}" alt="Preview" class="img-responsive" id="img" height="300" width="300" />
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select class="form-control" name="role" id="role" value="{{member.role}}">
+                                        <option value="None">None</option>
+                                        <option value="Admin">Admininistrator</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Other Information</label>
+                            <textarea name="otherInfo" cols="30" rows="5" class="form-control ">{{member.otherInfo}}</textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label text-muted small" for="flexCheckChecked">
+                                Declaration, I belive in the Islamic monotheism by extension in it's doctrine and practise and automatically cease to be a member once I renounce Islam and its beliefs.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer ">
+                    <a href="{% url 'home' %}" class="btn btn-success ">
+                        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Go Back</a>
+                    <button type="submit " class="btn btn-primary " name="update_info">Update Info</button>
+                </div>
+            </form>
+
+        </div>
+
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %} {% block script %}
+<script>
+    document.getElementById("profimage").onchange = function() {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("img").src = e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+    };
+</script>
+{% endblock %}
